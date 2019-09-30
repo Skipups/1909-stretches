@@ -15,14 +15,20 @@ const obj3 = { a: 1, b: true, c: 42 };
 pluck(obj3, ['a', 'c', 'x'])
 returns { a: 1, c: 42};
 */
-
-function pluck(obj, elements) {
-  const newObj = {};
-  elements.forEach(el => {
-    if (obj[el] !== undefined) newObj[el] = obj[el];
-  });
+function pluck (obj, arrOfKeys){
+const newObj = {};
 
   return newObj;
 }
 
+// function pluck(obj, elements) {
+//   const newObj = {};
+//   elements.forEach(el => {
+//     if (obj[el] !== undefined) newObj[el] = obj[el];
+//   });
+
+//   return newObj;
+// }
+
 module.exports = { pluck };
+// jest isEqual
