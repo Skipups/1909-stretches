@@ -1,23 +1,11 @@
 function groupBy(arr, attr) {
-  let obj = {};
-  for (let i = 0; i < arr.length; i++) {
-    let elm = arr[i];
-    //console.log(attr(elm));
-    obj[elm] += elm.attr;
-  }
-  console.log(obj);
-  return obj;
+  return arr.reduce((accum, curr) => {
+    if (typeof attr === "function") {
+      return (accum += attr(curr));
+    } else {
+      return (accum += curr[attr]);
+    }
+  }, {});
 }
 
 module.exports = { groupBy };
-
-// function groupBy(arr, attr) {
-//     let obj = {};
-//     for (let i = 0; i < arr.length; i++) {
-//       let elm = arr[i];
-//       console.log(elm, attr);
-//       obj[elm] += elm.attr;
-//     }
-//     console.log(obj);
-//     return obj;
-//   }
