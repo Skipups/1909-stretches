@@ -1,26 +1,26 @@
-const { multiply } = require('./multiply');
+const { multiply } = require("./multiply");
 
-describe('multiply testing', () => {
-  test('it should ensure it receives two numbers', () => {
+describe("multiply testing", () => {
+  test("it should ensure it receives two numbers", () => {
     // test some values that should fail
 
-    expect(() => multiply(/*fill this in*/)).toThrow();
+    expect(() => multiply(num1, num2)).toThrow();
 
-    expect(() => multiply(/*fill this in*/)).toThrow();
+    expect(() => multiply(a, 2)).toThrow("must be a number");
   });
 
-  test('it returns the product of two numbers', () => {
+  test("it returns the product of two numbers", () => {
     // test the type of the returned value
-    expect(/*fill this in*/).toBe(/*fill this in*/);
+    expect(2 * 3).toBe(6);
 
     // test that the returned value is correct
-    expect(/*fill this in*/).toBe(/*fill this in*/);
+    expect(2 * 3).toBe(6);
 
     // test some other values
-    expect(/* fill this in */).toBe(/* fill this in */);
+    expect(2 * 2).toBe(4);
   });
 
-  test('it is not hardcoded (hint: use random numbers)', () => {
-    // test some random values
+  test("it is not hardcoded (hint: use random numbers)", () => {
+    Math.random;
   });
 });
