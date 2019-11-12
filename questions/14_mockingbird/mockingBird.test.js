@@ -78,17 +78,17 @@ describe('Learn how to write mock functions!', () => {
       };
 
       // create a mock for the bird function
-      const birdMock = () => {
-        return "Tweet"
-      };
+      const birdMock = jest.fn(bird)
 
       const repeaterOutput = repeater(birdMock, numberOfRepeats);
-      repeater = jest.fn(repeater);
+      
       // the expected output will be an array of return values from birdMock.
       const expectedOutput = [];
 
       // fill out expectedOutput using our mock return values
-      birdMock.mock.results.forEach();
+      birdMock.mock.results.forEach(result => {
+        expectedOutput.push(result.value)
+      });
 
       expect(repeaterOutput).toEqual(expectedOutput);
     });
