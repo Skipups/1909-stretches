@@ -10,11 +10,13 @@ function sortOrder(arr, sorted, key) {
         return -1;
       }
       if (a[sorted] > b[sorted]) {
-        return1;
+        return 1;
       }
       return 0;
     })
-    .map(element => element[key]);
+    .map(element => {
+      return element[key];
+    });
 }
 
 //array.prototype.sort()
