@@ -2,20 +2,21 @@
 SortOrder takes an array of objects, a key to be sorted on 
 and a key for the return value. 
 */
-
-function sortOrder(hsort, data){
-    if (typeOf hsort === "number"){
-        data.reduce( (prev, curr) => {
-            console.log(curr)
-            if(prev[sorts] >curr[sorts] ){
-                retu
-            }
-            return prev
-        },[])
-        data.forEach( obj => {
-            Object.keys(obj)
-        })
-    }
+//comparsion functions
+function sortOrder(arr, sorted, key) {
+  return arr
+    .sort((a, b) => {
+      if (a[sorted] < b[sorted]) {
+        return -1;
+      }
+      if (a[sorted] > b[sorted]) {
+        return1;
+      }
+      return 0;
+    })
+    .map(element => element[key]);
 }
+
+//array.prototype.sort()
 
 module.exports = { sortOrder };
