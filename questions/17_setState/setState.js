@@ -5,9 +5,11 @@
 class StatefulThing {
   constructor(initialState = {}) {
     this.state = initialState;
+    this.setState = this.setState.bind(this);
   }
   setState() {
-    // YOUR CODE
+    console.log(this);
+    initialState.setStatefulThing(...this.initialState);
   }
 }
 
