@@ -5,29 +5,38 @@
 class StatefulThing {
   constructor(initialState = {}) {
     this.state = initialState;
-    this.setState = this.setState.bind(this);
+    this.previousStates = [initialState];
+    //this.setState = this.setState.bind(this);
   }
-  setState() {
-    console.log(this);
-    initialState.setStatefulThing(...this.initialState);
-  }
-}
-
-module.exports = { StatefulThing };
-
-class StatefulThing {
-  constructor(initialState = {}) {
-    this.state = initialState;
-    this.prevStates = [];
-  }
-  setState(incomingState) {
-    //this.state= {...this.state, ...incomingState}
-    this.state = Object.assign({}, this.state, incomingState);
+  setState(newState) {
+    //console.log(this.state);
+    // this.state = { ...this.state, ...newState };
+    this.state = Object.assign({}, this.state, newState);
+    this.previousStates.push(this.state);
     return this.state;
   }
+
   goBack() {
-    this.state = this.prevStates.pop();
+    this.previousStates.pop();
+    this.state = this.previousStates[this.previousStates.length - 1];
   }
 }
 
 module.exports = { StatefulThing };
+
+// class StatefulThing {
+//   constructor(initialState = {}) {
+//     this.state = initialState;
+//     this.prevStates = [];
+//   }
+//   setState(incomingState) {
+//     //this.state= {...this.state, ...incomingState}
+//     this.state = Object.assign({}, this.state, incomingState);
+//     return this.state;
+//   }
+//   goBack() {
+//     this.state = this.prevStates.pop();
+//   }
+// }
+
+// module.exports = { StatefulThing };
