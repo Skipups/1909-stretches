@@ -14,3 +14,20 @@ class StatefulThing {
 }
 
 module.exports = { StatefulThing };
+
+class StatefulThing {
+  constructor(initialState = {}) {
+    this.state = initialState;
+    this.prevStates = [];
+  }
+  setState(incomingState) {
+    //this.state= {...this.state, ...incomingState}
+    this.state = Object.assign({}, this.state, incomingState);
+    return this.state;
+  }
+  goBack() {
+    this.state = this.prevStates.pop();
+  }
+}
+
+module.exports = { StatefulThing };
