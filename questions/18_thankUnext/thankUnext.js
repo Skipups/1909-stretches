@@ -17,3 +17,19 @@
 // YOUR CODE (intentionally blank):
 
 // no export statement required
+someArr = ['shake', 'and', 'bake'];
+let i=0;
+function next (arr){
+  for ( i < someArr.length; i++) {
+    return someArr[i];
+  }
+}
+const next = {
+  nextLetter: function() {
+    for (let i = 0; i < someArr.length; i++) {
+      return someArr[i];
+    }
+  },
+};
+let answer = someArr.next();
+console.log(answer);
