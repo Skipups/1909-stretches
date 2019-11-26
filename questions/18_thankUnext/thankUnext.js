@@ -33,3 +33,16 @@ const next = {
 };
 let answer = someArr.next();
 console.log(answer);
+
+///Mark's answer
+Array.prototype.next = function () {
+  if(!this.nextIdx){
+    this.nextIdx =0;
+  }
+  console.log(this[this.nextidx]);
+  this.nextIdx +=1;
+  if(this.nextIdx >=this.length){
+    this.nextIndx=0;
+  }
+  return this
+}
