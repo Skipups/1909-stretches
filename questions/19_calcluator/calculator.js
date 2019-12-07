@@ -1,30 +1,30 @@
 class Calculator {
-  constructor(value = 0) {
-    this.value = value;
+  constructor() {
+    this.value = 0;
   }
-
   add(num) {
     this.vaue = num + this.value;
-    return this.value;
+    return this;
   }
-  subtract(num) {
+  subtract = num => {
     this.vaue = this.value - num;
-    return this.value;
-  }
+    return this;
+  };
   multiply(num) {
     this.value = this.value * num;
-    return this.value;
+    return this;
   }
   divide(num) {
     if (num !== 0) {
       this.value = this.value / num;
+      return this;
     } else {
-      return this.value;
+      return this;
     }
   }
   clear() {
     this.value = 0;
-    return 0;
+    return this;
   }
 }
 
